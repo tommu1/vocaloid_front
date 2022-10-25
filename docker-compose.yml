@@ -6,6 +6,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/usr/src/app 
-    command: sh -c "cd hello-next && yarn run dev"
+    command: sh -c "cd next-app && yarn run dev"
     ports:
       - "8080:8080"
