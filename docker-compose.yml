@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/usr/src/app 
-    command: sh -c "cd next-app && yarn run dev"
+      - ./:/usr/src/app
+    command: sh -c "cd next-app && yarn && yarn run dev"
     ports:
       - "8080:8080"
