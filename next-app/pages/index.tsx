@@ -1,8 +1,25 @@
+import { useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  useEffect(() => {
+    (async () => {
+      const url = 'http://host.docker.internal:3000/api/v1/test/';
+      try {
+        const res = await fetch(url, {
+          method: 'GET',
+          mode: 'cors'
+        });
+        const data = await res.json();
+        console.log(data);
+      } catch(error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
